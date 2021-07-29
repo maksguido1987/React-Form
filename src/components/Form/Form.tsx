@@ -40,6 +40,29 @@ const Form: FC = () => {
             />
           </label>
         </div>
+        <div className="form-group">
+          <label htmlFor="exampleInputLastName" className="form-label mt-3">
+            Year of birth
+            <input
+              type="date"
+              className="form-control"
+              id="exampleInputLastName"
+              placeholder="Last Name"
+            />
+          </label>
+        </div>
+        <div className="form-group">
+          <label htmlFor="exampleSelect1" className="form-label mt-4">
+            Example select
+            <select className="form-select" id="exampleSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </label>
+        </div>
       </fieldset>
     </form>
   );
