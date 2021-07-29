@@ -1,6 +1,15 @@
-.container__cards {
+.main {
   display: flex;
+  justify-content: space-between;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+}
+.left-main-container,
+.right-main-container {
+  flex: 0 1 48%;
+  flex-wrap: wrap;
+  padding: 20px;
+  border: 2px solid #fff;
+  border-radius: 50px;
 }

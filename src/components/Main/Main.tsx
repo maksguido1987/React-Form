@@ -1,10 +1,13 @@
 import React, { FC } from 'react';
-import Form from '../Form/Form';
+import MainLeftField from './MainLeftField';
+import MainRightField from './MainRightField';
+import './main.scss';
 
 const Main: FC = () => {
   return (
     <main className="main">
-      <Form />
+      <MainLeftField />
+      <MainRightField />
     </main>
   );
 };
