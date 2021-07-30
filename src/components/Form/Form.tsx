@@ -4,6 +4,7 @@ import Checkbox from './FormComponents/Checkbox';
 import FormDate from './FormComponents/FormDate';
 import FormSelect from './FormComponents/FormSelect';
 import Name from './FormComponents/Name';
+import Submit from './FormComponents/Submit';
 import Switcher from './FormComponents/Switcher';
 
 const Form: FC = () => {
@@ -14,8 +15,15 @@ const Form: FC = () => {
         <Name />
         <FormDate />
         <FormSelect />
-        <Switcher />
-        <Checkbox />
+        <div className="check-erapper">
+          <div className="check-left">
+            <Switcher />
+            <Checkbox />
+          </div>
+          <div className="check-right">
+            <Submit />
+          </div>
+        </div>
       </fieldset>
     </form>
   );
