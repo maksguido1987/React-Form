@@ -1,11 +1,12 @@
 .card {
-  flex: 0 0 22%;
+  flex: 0 0 24%;
   margin: 0.5rem !important;
 }
 .card-header {
   padding: 0 0.6rem !important;
 }
 .card-body {
+  display: block !important;
   padding: 0.3rem !important;
   font-size: 0.7rem !important;
   p {

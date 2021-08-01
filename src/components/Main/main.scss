@@ -8,11 +8,11 @@
 }
 .left-main-container,
 .right-main-container {
-  flex: 0 0 48%;
+  flex: 0 0 46% !important;
   padding: 20px;
   border: 2px solid #fff;
   border-radius: 50px;
 }
 .right-main-container {
-  display: flex;
+  display: block;
 }

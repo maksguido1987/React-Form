@@ -1,14 +1,38 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import { ICardData } from '../../../interfaces';
 
-export default class Name extends Component {
+export default class Name extends Component<{}, ICardData> {
+  constructor(props: ICardData) {
+    super(props);
+    this.state = {
+      name: '',
+      lastName: '',
+    };
+  }
+
+  onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      name: e.target.value,
+    });
+  };
+
+  onLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      lastName: e.target.value,
+    });
+  };
+
   render() {
+    const { name, lastName } = this.state;
     return (
       <>
         <div className="form-group">
           <label htmlFor="exampleInputName" className="form-label mt-3">
             Name
             <input
+              onChange={this.onNameChange}
+              value={name}
               type="text"
               className="form-control"
               id="exampleInputName"
@@ -24,6 +48,8 @@ export default class Name extends Component {
           <label htmlFor="exampleInputLastName" className="form-label mt-3">
             Last Name
             <input
+              onChange={this.onLastNameChange}
+              value={lastName}
               type="text"
               className="form-control"
               id="exampleInputLastName"
