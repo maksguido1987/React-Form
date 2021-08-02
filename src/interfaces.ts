@@ -5,3 +5,8 @@ export interface ICardData {
   contry?: string;
   skills?: [react: string, angular: string, vue: string];
 }
+
+export interface IPropsName {
+  name: string;
+  lastName: string;
+}

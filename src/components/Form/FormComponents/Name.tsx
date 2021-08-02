@@ -1,9 +1,9 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import { ICardData } from '../../../interfaces';
+import { ICardData, IPropsName } from '../../../interfaces';
 
-export default class Name extends Component<{}, ICardData> {
-  constructor(props: ICardData) {
+export default class Name extends Component<IPropsName, ICardData> {
+  constructor(props: IPropsName) {
     super(props);
     this.state = {
       name: '',

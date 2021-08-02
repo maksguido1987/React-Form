@@ -15,7 +15,7 @@ const Form: FC = () => {
         <Name />
         <FormDate />
         <FormSelect />
-        <div className="check-erapper">
+        <div className="check-wrapper">
           <div className="check-left">
             <Switcher />
             <Checkbox />
