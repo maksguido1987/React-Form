@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { ICardData } from '../../interfaces';
 import './form.scss';
 import Checkbox from './FormComponents/Checkbox';
 import FormDate from './FormComponents/FormDate';
@@ -7,7 +8,7 @@ import Name from './FormComponents/Name';
 import Submit from './FormComponents/Submit';
 import Switcher from './FormComponents/Switcher';
 
-const Form: FC = () => {
+const Form: FC<ICardData> = (props) => {
   return (
     <form className="form">
       <fieldset>
