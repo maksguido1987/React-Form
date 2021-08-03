@@ -6,6 +6,10 @@ export interface ICardData {
   skills?: [react: string, angular: string, vue: string];
 }
 
+export interface ICardDataState {
+  cardData: ICardData[];
+}
+
 export interface IPropsName {
   name: string;
   lastName: string;

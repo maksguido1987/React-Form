@@ -8,7 +8,7 @@ import Name from './FormComponents/Name';
 import Submit from './FormComponents/Submit';
 import Switcher from './FormComponents/Switcher';
 
-const Form: FC<ICardData> = (props) => {
+const Form: FC<ICardData> = () => {
   return (
     <form className="form">
       <fieldset>
