@@ -12,6 +12,8 @@ export default class Name extends Component<IPropsName, ICardData> {
   }
 
   onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { onAddNameForm } = this.props;
+    onAddNameForm(e.target.value);
     this.setState({
       name: e.target.value,
     });

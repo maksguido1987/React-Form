@@ -16,6 +16,7 @@ export default class Main extends Component<IAddCardData, IAppState> {
   onAddCardData = (data: ICardData) => {
     const { cardData } = this.state;
     cardData.push(data);
+    console.log(cardData);
   };
 
   render() {
