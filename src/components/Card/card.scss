@@ -1,9 +1,11 @@
 .card {
   flex: 0 0 24%;
   margin: 0.5rem !important;
+  border-radius: 12px;
 }
 .card-header {
   padding: 0 0.6rem !important;
+  border-radius: 12px 12px 0px 0px !important;
 }
 .card-body {
   display: block !important;

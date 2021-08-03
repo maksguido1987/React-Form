@@ -5,7 +5,7 @@ import './card.scss';
 const Card: FC<ICardData> = (props) => {
   const { name, lastName, date, skills } = props;
   return (
-    <div className="card text-white bg-primary mb-3">
+    <div className="card text-white bg-secondary mb-3">
       <div className="card-header">
         {name} {lastName}
       </div>

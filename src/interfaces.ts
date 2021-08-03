@@ -6,7 +6,11 @@ export interface ICardData {
   skills?: [react: string, angular: string, vue: string];
 }
 
-export interface ICardDataState {
+export interface IAddCardData {
+  addCardData: (data: ICardData) => void;
+}
+
+export interface IAppState {
   cardData: ICardData[];
 }
 
