@@ -1,8 +1,8 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import { ICardData, IPropsName } from '../../../interfaces';
+import { IStateName, IPropsName } from '../../../interfaces';
 
-export default class Name extends Component<IPropsName, ICardData> {
+export default class Name extends Component<IPropsName, IStateName> {
   constructor(props: IPropsName) {
     super(props);
     this.state = {
@@ -20,6 +20,8 @@ export default class Name extends Component<IPropsName, ICardData> {
   };
 
   onLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { onAddLastNameForm } = this.props;
+    onAddLastNameForm(e.target.value);
     this.setState({
       lastName: e.target.value,
     });

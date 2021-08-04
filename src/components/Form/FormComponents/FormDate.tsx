@@ -1,9 +1,9 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import { ICardData } from '../../../interfaces';
+import { ICardData, IPropsDate } from '../../../interfaces';
 
-export default class FormDate extends Component<{}, ICardData> {
-  constructor(props: ICardData) {
+export default class FormDate extends Component<IPropsDate, ICardData> {
+  constructor(props: IPropsDate) {
     super(props);
     this.state = {
       date: '',
@@ -11,6 +11,8 @@ export default class FormDate extends Component<{}, ICardData> {
   }
 
   onDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { onAddDateForm } = this.props;
+    onAddDateForm(e.target.value);
     this.setState({ date: e.target.value });
   };
 

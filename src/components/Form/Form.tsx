@@ -2,12 +2,12 @@
 import React, { Component } from 'react';
 import { IAddCardData, ICardData } from '../../interfaces';
 import './form.scss';
-import Checkbox from './FormComponents/Checkbox';
 import FormDate from './FormComponents/FormDate';
 import FormSelect from './FormComponents/FormSelect';
 import Name from './FormComponents/Name';
 import Submit from './FormComponents/Submit';
 import Switcher from './FormComponents/Switcher';
+import RadioButtons from './FormComponents/RadioButtons';
 
 export default class Form extends Component<IAddCardData, ICardData> {
   constructor(props: IAddCardData) {
@@ -16,7 +16,8 @@ export default class Form extends Component<IAddCardData, ICardData> {
       name: '',
       lastName: '',
       date: '',
-      contry: 'Russia',
+      country: 'Russia',
+      skills: [],
     };
   }
 
@@ -26,24 +27,37 @@ export default class Form extends Component<IAddCardData, ICardData> {
     addCardData(this.state);
   };
 
-  onAddName = (value: string) => {
-    this.setState({ name: value });
+  onAddName = (name: string) => {
+    this.setState({ name });
+  };
+
+  onAddLastName = (lastName: string) => {
+    this.setState({ lastName });
+  };
+
+  onAddDate = (date: string) => {
+    this.setState({ date });
+  };
+
+  onAddContry = (country: string) => {
+    this.setState({ country });
+  };
+
+  onAddSkill = (value: string[]) => {
+    this.setState({ skills: value });
   };
 
   render() {
-    const { name, lastName, date, contry } = this.state;
-    window.state = this.state;
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <fieldset>
-          <legend>React Form</legend>
-          <Name onAddNameForm={this.onAddName} />
-          <FormDate date={date} />
-          <FormSelect contry={contry} />
+          <Name onAddNameForm={this.onAddName} onAddLastNameForm={this.onAddLastName} />
+          <FormDate onAddDateForm={this.onAddDate} />
+          <FormSelect onAddContryForm={this.onAddContry} />
           <div className="check-wrapper">
             <div className="check-left">
-              <Switcher />
-              <Checkbox />
+              <Switcher onCheckSkill={this.onAddSkill} />
+              <RadioButtons />
             </div>
             <div className="check-right">
               <Submit />

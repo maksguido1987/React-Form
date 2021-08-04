@@ -15,15 +15,17 @@ export default class Main extends Component<IAddCardData, IAppState> {
 
   onAddCardData = (data: ICardData) => {
     const { cardData } = this.state;
-    cardData.push(data);
-    console.log(cardData);
+    const newCardData = cardData.slice();
+    newCardData.push(data);
+    this.setState({ cardData: newCardData });
   };
 
   render() {
+    const { cardData } = this.state;
     return (
       <main className="main">
         <MainLeftField addCardData={this.onAddCardData} />
-        <MainRightField />
+        <MainRightField appState={cardData} />
       </main>
     );
   }

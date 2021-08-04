@@ -1,14 +1,23 @@
+/* eslint-disable react/no-array-index-key */
 import React, { FC } from 'react';
-import { ICardData } from '../../interfaces';
+import { ICardDataArray } from '../../interfaces';
 import Card from '../Card/Card';
 
-const MainRightField: FC<ICardData> = (props) => {
-  const { name, lastName, date, skills } = props;
-  return (
-    <div className="right-main-container">
-      <Card name={name} lastName={lastName} date={date} skills={skills} />
-    </div>
-  );
+const MainRightField: FC<ICardDataArray> = (props) => {
+  const { appState } = props;
+  const cards = appState.map((item, index) => {
+    return (
+      <Card
+        key={index}
+        name={item.name}
+        lastName={item.lastName}
+        date={item.date}
+        country={item.country}
+        skills={item.skills}
+      />
+    );
+  });
+  return <div className="right-main-container">{cards}</div>;
 };
 
 export default MainRightField;
