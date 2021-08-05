@@ -16,7 +16,6 @@ export interface ICardDataArray {
 
 export interface IAddCardData {
   addCardData: (data: ICardData) => void;
-  // checkFormValid: (data: IUnDisableBtn) => void;
 }
 
 export interface IStateApp {
@@ -84,5 +83,5 @@ export interface IStateSubmit {
 }
 
 export interface IPropsSubmit {
-  onCheckValid: {};
+  onCheckValid: boolean;
 }

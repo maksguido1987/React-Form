@@ -1,22 +1,11 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import { IStateRadio, IPropsRadio } from '../../../interfaces';
+import { IPropsRadio } from '../../../interfaces';
 
-export default class RadioButtons extends Component<IPropsRadio, IStateRadio> {
-  constructor(props: IPropsRadio) {
-    super(props);
-    this.state = {
-      isAgree: false,
-    };
-  }
-
-  onCheckAgree = (e: React.ChangeEvent<HTMLInputElement>) => {
+export default class RadioButtons extends Component<IPropsRadio> {
+  onCheckAgree = () => {
     const { checkValidAgree } = this.props;
-    const { isAgree } = this.state;
-    if (e.target.checked) {
-      this.setState({ isAgree: true });
-    }
-    checkValidAgree(isAgree);
+    checkValidAgree(true);
   };
 
   render() {

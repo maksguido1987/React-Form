@@ -18,13 +18,12 @@ export default class FormDate extends Component<IPropsDate, IStateDate> {
 
   onDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { onAddDateForm, checkValidDate } = this.props;
-    const { dateError } = this.state;
     onAddDateForm(e.target.value);
     this.setState({ date: e.target.value });
     if (e.target.value) {
       this.setState({ dateError: true });
     }
-    checkValidDate(dateError);
+    checkValidDate(true);
   };
 
   render() {

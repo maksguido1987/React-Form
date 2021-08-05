@@ -29,12 +29,11 @@ export default class Name extends Component<IPropsName, IStateName> {
 
   onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { onAddNameForm, checkValidName } = this.props;
-    const { nameError } = this.state;
     onAddNameForm(e.target.value);
     this.setState({
       name: e.target.value,
     });
-    checkValidName(nameError);
+    checkValidName(true);
     if (e.target.value.length > 3) {
       this.setState({ nameError: true });
     } else {
@@ -44,12 +43,11 @@ export default class Name extends Component<IPropsName, IStateName> {
 
   onLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { onAddLastNameForm, checkValidLastName } = this.props;
-    const { lastNameError } = this.state;
     onAddLastNameForm(e.target.value);
     this.setState({
       lastName: e.target.value,
     });
-    checkValidLastName(lastNameError);
+    checkValidLastName(true);
     if (e.target.value.length > 3) {
       this.setState({ lastNameError: true });
     } else {

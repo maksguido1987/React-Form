@@ -13,6 +13,10 @@ const MainRightField: FC<ICardDataArray> = (props) => {
         date={item.date}
         country={item.country}
         skills={item.skills}
+        nameError={item.nameError}
+        lastNameError={item.lastNameError}
+        dateError={item.dateError}
+        isAgree={item.isAgree}
       />
     );
   });

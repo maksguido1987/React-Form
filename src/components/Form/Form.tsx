@@ -29,6 +29,18 @@ export default class Form extends Component<IAddCardData, ICardData> {
     e.preventDefault();
     const { addCardData } = this.props;
     addCardData(this.state);
+    this.setState({
+      name: '',
+      lastName: '',
+      date: '',
+      country: 'Russia',
+      skills: [],
+      nameError: false,
+      lastNameError: false,
+      dateError: false,
+      isAgree: false,
+    });
+    alert('Карточка добалена!');
   };
 
   onAddName = (name: string) => {
