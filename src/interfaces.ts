@@ -74,10 +74,6 @@ export interface IPropsRadio {
   checkValidAgree: (isAgree: boolean) => void;
 }
 
-export interface IStateRadio {
-  isAgree: boolean;
-}
-
 export interface IStateSubmit {
   stateButton: boolean;
 }
