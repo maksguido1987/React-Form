@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import MainLeftField from './MainLeftField';
 import MainRightField from './MainRightField';
 import './main.scss';
-import { IAddCardData, ICardData, IAppState } from '../../interfaces';
+import { IAddCardData, ICardData, IStateApp } from '../../interfaces';
 
-export default class Main extends Component<IAddCardData, IAppState> {
+export default class Main extends Component<IAddCardData, IStateApp> {
   constructor(props: IAddCardData) {
     super(props);
     this.state = {

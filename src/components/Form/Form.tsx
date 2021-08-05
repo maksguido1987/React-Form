@@ -18,6 +18,10 @@ export default class Form extends Component<IAddCardData, ICardData> {
       date: '',
       country: 'Russia',
       skills: [],
+      nameError: false,
+      lastNameError: false,
+      dateError: false,
+      isAgree: false,
     };
   }
 
@@ -47,20 +51,43 @@ export default class Form extends Component<IAddCardData, ICardData> {
     this.setState({ skills: value });
   };
 
+  onCheckValidName = (nameError: boolean) => {
+    this.setState({ nameError });
+  };
+
+  onCheckValidLastName = (lastNameError: boolean) => {
+    this.setState({ lastNameError });
+  };
+
+  onCheckValidDate = (dateError: boolean) => {
+    this.setState({ dateError });
+  };
+
+  onCheckValidAgree = (isAgree: boolean) => {
+    this.setState({ isAgree });
+  };
+
   render() {
+    const { nameError, lastNameError, dateError, isAgree } = this.state;
+    const сheckValidStateErrors = nameError && lastNameError && dateError && isAgree;
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <fieldset>
-          <Name onAddNameForm={this.onAddName} onAddLastNameForm={this.onAddLastName} />
-          <FormDate onAddDateForm={this.onAddDate} />
+          <Name
+            onAddNameForm={this.onAddName}
+            onAddLastNameForm={this.onAddLastName}
+            checkValidName={this.onCheckValidName}
+            checkValidLastName={this.onCheckValidLastName}
+          />
+          <FormDate onAddDateForm={this.onAddDate} checkValidDate={this.onCheckValidDate} />
           <FormSelect onAddContryForm={this.onAddContry} />
           <div className="check-wrapper">
             <div className="check-left">
               <Switcher onCheckSkill={this.onAddSkill} />
-              <RadioButtons />
+              <RadioButtons checkValidAgree={this.onCheckValidAgree} />
             </div>
             <div className="check-right">
-              <Submit />
+              <Submit onCheckValid={сheckValidStateErrors} />
             </div>
           </div>
         </fieldset>

@@ -4,6 +4,10 @@ export interface ICardData {
   date: string;
   country: string;
   skills: Array<string>;
+  nameError: boolean;
+  lastNameError: boolean;
+  dateError: boolean;
+  isAgree: boolean;
 }
 
 export interface ICardDataArray {
@@ -12,9 +16,10 @@ export interface ICardDataArray {
 
 export interface IAddCardData {
   addCardData: (data: ICardData) => void;
+  // checkFormValid: (data: IUnDisableBtn) => void;
 }
 
-export interface IAppState {
+export interface IStateApp {
   cardData: ICardData[];
 }
 
@@ -23,16 +28,29 @@ export interface IPropsName {
   lastName?: string;
   onAddNameForm: (value: string) => void;
   onAddLastNameForm: (value: string) => void;
+  checkValidName: (nameError: boolean) => void;
+  checkValidLastName: (lastNameError: boolean) => void;
 }
 
 export interface IStateName {
   name: string;
   lastName: string;
+  checkFocusName: boolean;
+  checkFocusLastName: boolean;
+  nameError: boolean;
+  lastNameError: boolean;
 }
 
 export interface IPropsDate {
   date?: string;
   onAddDateForm: (date: string) => void;
+  checkValidDate: (dateError: boolean) => void;
+}
+
+export interface IStateDate {
+  date: string;
+  checkFocusDate: boolean;
+  dateError: boolean;
 }
 
 export interface IPropsCountry {
@@ -51,4 +69,20 @@ export interface IPropsSwitcher {
 
 export interface IStateSwitcher {
   skills: Array<string>;
+}
+
+export interface IPropsRadio {
+  checkValidAgree: (isAgree: boolean) => void;
+}
+
+export interface IStateRadio {
+  isAgree: boolean;
+}
+
+export interface IStateSubmit {
+  stateButton: boolean;
+}
+
+export interface IPropsSubmit {
+  onCheckValid: {};
 }

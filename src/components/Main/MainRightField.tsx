@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React, { FC } from 'react';
 import { ICardDataArray } from '../../interfaces';
 import Card from '../Card/Card';
@@ -8,7 +7,7 @@ const MainRightField: FC<ICardDataArray> = (props) => {
   const cards = appState.map((item, index) => {
     return (
       <Card
-        key={index}
+        key={index.toString()}
         name={item.name}
         lastName={item.lastName}
         date={item.date}
