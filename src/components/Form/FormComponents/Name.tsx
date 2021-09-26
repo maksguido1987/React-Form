@@ -1,4 +1,5 @@
 /* eslint-disable react/prefer-stateless-function */
+// fake comment
 import React, { Component } from 'react';
 import { IStateName, IPropsName } from '../../../interfaces';
 
